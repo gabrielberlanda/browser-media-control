@@ -30,7 +30,14 @@ function MediaControllerService() {
             commands: {
                 next: (tab) => 'document.querySelector(".spoticon-skip-forward-16").click()',
                 previous: (tab) => 'document.querySelector(".spoticon-skip-back-16").click()',
-                togglePlayPause: (tab) => 'document.querySelector(".control-button--circled").click()',
+                togglePlayPause: (tab) => `
+                    var pauseBttn = document.querySelector(".spoticon-pause-16");
+                    if(pauseBttn != null) {
+                        pauseBttn.click();
+                    } else {
+                        document.querySelector(".spoticon-play-16").click();
+                    }
+                `,
                 mute: (tab) => 'document.querySelector(".spoticon-volume-16").click()' 
             }
         }
