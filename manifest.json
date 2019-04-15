@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "Browser media controller",
+    "description": "Extension to control media for youtube (play, pause, skip, previous)",
+    "version": "0.1",
+    
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "browser_action": {
+        "default_title": "Media controller :)"
+    },
+    "commands": {
+        "next_music": {
+            "suggested_key": {
+                "default": "Ctrl+Right"
+            },
+            "description": "Skip to the next music or to the first recommend music"
+        },
+        "previous_music": {
+            "suggested_key": {
+                "default": "Ctrl+Left"
+            },
+            "description": "Go back to the previous music or go back to the last url"
+        },
+        "toggle_play_pause": {
+            "suggested_key": {
+                "default": "Ctrl+Down"
+            },
+            "description": "Toggle play or pause"
+        },
+        "toggle_mute_music": {
+            "suggested_key": {
+                "default": "Ctrl+Up"
+            },
+            "description": "Mute tabs"
+        }
+    },
+    "permissions": [
+        "tabs",
+        "http://*/",
+        "https://*/"
+    ]
+}
