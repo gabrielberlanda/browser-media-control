@@ -4,7 +4,8 @@ function MediaControllerService() {
         NEXT: "next_music",
         PREVIOUS: "previous_music",
         TOGGLE_PLAY_PAUSE: "toggle_play_pause",
-        MUTE: "toggle_mute_music"
+        MUTE: "toggle_mute_music",
+        REPLAY: "replay"
     };
 
     var PLAYERS_PATTERN = [
@@ -21,7 +22,10 @@ function MediaControllerService() {
                     }
                 },
                 togglePlayPause: (tab) => 'document.querySelector(".ytp-play-button").click()',
-                mute: (tab) => 'document.querySelector(".ytp-mute-button").click()'
+                mute: (tab) => 'document.querySelector(".ytp-mute-button").click()',
+                replay: (tab) => {
+                    
+                }
             }
 
         }, 
@@ -38,7 +42,8 @@ function MediaControllerService() {
                         document.querySelector(".spoticon-play-16").click();
                     }
                 `,
-                mute: (tab) => 'document.querySelector(".spoticon-volume-16").click()' 
+                mute: (tab) => 'document.querySelector(".spoticon-volume-16").click()',
+                replay: (tab) => {}
             }
         }
     ];
@@ -85,6 +90,9 @@ function MediaControllerService() {
                     break;
                 case MEDIA_CONSTANTS.TOGGLE_PLAY_PAUSE:
                     dispatchAction(tab.id, pattern.commands.togglePlayPause(tab));
+                    break;
+                case MEDIA_CONSTANTS.REPLAY:
+                    dispatchAction(tab.id, pattern.commands.replay(tab));
                     break;
                 default:
                     console.error("command not found");
