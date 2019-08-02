@@ -1,6 +1,7 @@
 ## HOW TO USE IT
 
-Select your first music video on youtube or open.spotify.com and you can control your music while surf on internet
+Select your first music video on youtube or open.spotify.com and you can control your music while surf on the internet.
+
 The shortcuts are:
 
 |COMMAND           |ACTION                         |
