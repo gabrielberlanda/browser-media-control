@@ -12,24 +12,10 @@ function MediaControllerService() {
         {
             url: 'https://music.amazon.com.br/*',
             commands: {
-                next: (tab) => 'document.querySelector("#transportPlayNext").click()',
-                previous: (tab) => 'document.querySelector("#transportPlayPrevious").click()',
-                togglePlayPause: (tab) => `
-                    var playButton = document.querySelector(".playerIconPlay");
-                    if(playButton != null) {
-                        playButton.click();
-                    } else {
-                        document.querySelector(".playerIconPause").click();
-                    }
-                `,
-                mute: (tab) => `
-                    var playButton = document.querySelector(".playerIconPlay");
-                    if(playButton != null) {
-                        playButton.click();
-                    } else {
-                        document.querySelector(".playerIconPause").click();
-                    }
-                `,
+                next: (tab) => `document.querySelector('.playbackControls').children[2].click()`,
+                previous: (tab) => `document.querySelector('.playbackControls').children[0].click()`,
+                togglePlayPause: (tab) => `document.querySelector('.playbackControls').children[1].click()`,
+                mute: (tab) => `document.querySelector('.playbackControls').children[1].click()`,
                 replay: (tab) => {
                     
                 }
