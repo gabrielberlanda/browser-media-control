@@ -10,6 +10,33 @@ function MediaControllerService() {
 
     var PLAYERS_PATTERN = [
         {
+            url: 'https://music.amazon.com.br/*',
+            commands: {
+                next: (tab) => 'document.querySelector("#transportPlayNext").click()',
+                previous: (tab) => 'document.querySelector("#transportPlayPrevious").click()',
+                togglePlayPause: (tab) => `
+                    var playButton = document.querySelector(".playerIconPlay");
+                    if(playButton != null) {
+                        playButton.click();
+                    } else {
+                        document.querySelector(".playerIconPause").click();
+                    }
+                `,
+                mute: (tab) => `
+                    var playButton = document.querySelector(".playerIconPlay");
+                    if(playButton != null) {
+                        playButton.click();
+                    } else {
+                        document.querySelector(".playerIconPause").click();
+                    }
+                `,
+                replay: (tab) => {
+                    
+                }
+            }
+
+        }, 
+        {
             url: 'https://www.youtube.com/watch?*',
             commands: {
                 next: (tab) => 'document.querySelector(".ytp-next-button").click()',
